@@ -1,4 +1,4 @@
-takes camera input(currently at this point), detects objects outlines, creates/reads maps for visually impaired.
+takes camera input(currently at this point), detects objects outlines, ~~creates~~/reads maps, gives audio output for visually impaired.
 to run:
 ```
 . /venv/activate
