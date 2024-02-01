@@ -1,5 +1,3 @@
-import fileinput as fl
-from tkinter import Frame
 import cv2
 
 vid = cv2.VideoCapture()
