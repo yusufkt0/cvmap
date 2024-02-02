@@ -1,11 +1,11 @@
 import cv2
-import cameradef
-import mapdef
+import cameradef as cam
+import mapdef as map
 
 vid = cv2.VideoCapture()
 frame = cv2.imread
 
-cameradef.getcam(0)
+cam.getcam(0)
 
 cv2.waitKey(0)
 vid.release()
