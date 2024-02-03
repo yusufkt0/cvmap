@@ -1,7 +1,6 @@
 import cv2
 
 vid = cv2.VideoCapture()
-tvid = cv2.VideoCapture()
 
 frame = cv2.imread
 
@@ -24,5 +23,5 @@ def thresh():
        
        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-       tvid = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+       cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
                                            cv2.THRESH_BINARY_INV, 11, 2)
