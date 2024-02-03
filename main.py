@@ -7,7 +7,7 @@ frame = cv2.imread
 
 cam.getcam(0)
 cam.thresh()
-cv2.imshow("",cam.tvid)
+cv2.imshow("",cam.gray) # type: ignore
 
 cv2.waitKey(0)
 cam.vid.release()

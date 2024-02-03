@@ -1,7 +1,7 @@
 import cv2
 
 vid = cv2.VideoCapture()
-
+gray = cv2.imread
 frame = cv2.imread
 
 xlen = vid.get(cv2.CAP_PROP_FRAME_WIDTH)
