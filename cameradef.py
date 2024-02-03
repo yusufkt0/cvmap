@@ -1,6 +1,8 @@
 import cv2
 
 vid = cv2.VideoCapture()
+tvid = cv2.VideoCapture()
+
 frame = cv2.imread
 
 xlen = vid.get(cv2.CAP_PROP_FRAME_WIDTH)
@@ -13,7 +15,7 @@ ylen = int (ylen)
 def getcam(index):
     vid = cv2.VideoCapture(index)
 
-def thresh(index):
+def thresh():
     while(vid.isOpened()):
 
        ret, frame = vid.read()
@@ -22,5 +24,5 @@ def thresh(index):
        
        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-       thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+       tvid = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
                                            cv2.THRESH_BINARY_INV, 11, 2)
