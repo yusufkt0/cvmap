@@ -9,12 +9,12 @@ def find_best_c_value(gray_frame):
         thresh = cv2.adaptiveThreshold(gray_frame, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, c_value)
 
         # Evaluate the clarity of lines (you may adjust this scoring metric)
-        score = cv2.Canny(thresh, 50, 150).mean()
+        score = cv2.Canny(thresh, 75, 175).mean()
 
         # Update the best parameters if the current result is better
         if score > best_score:
             best_score = score
-            best_c_value = c_value
+            best_c_value = c_value                           
 
     return best_c_value
 
