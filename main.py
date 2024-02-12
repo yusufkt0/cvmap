@@ -25,12 +25,10 @@ def thresh():
        
        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-       cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+       th = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
                                            cv2.THRESH_BINARY_INV, 11, 2)
 
-
-ret, frame = cv2.imread(gray)
-cv2.imshow("",frame)
+cv2.imshow("",th)
 
 cv2.waitKey(0)
 cam.vid.release()
