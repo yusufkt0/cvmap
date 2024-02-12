@@ -1,35 +1,27 @@
-from math import e
 import cv2
-import mapdef as map
 
-vid = cv2.VideoCapture()
-gray = cv2.imread
-frame = cv2.imread
+# Open the camera
+cap = cv2.VideoCapture(0)
 
-xlen = vid.get(cv2.CAP_PROP_FRAME_WIDTH)
-ylen = vid.get(cv2.CAP_PROP_FRAME_HEIGHT)
-th = cv2.imread()
-#resize int istiyor
-xlen = int (xlen)
-ylen = int (ylen)
+while True:
+    # Capture frame-by-frame
+    ret, frame = cap.read()
 
-def getcam(index):
-    vid = cv2.VideoCapture(index)
+    # Convert the frame to grayscale
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-def thresh():
-    while(vid.isOpened()):
+    # Apply adaptive thresholding
+    # You can adjust the parameters like blockSize and C according to your needs
+    thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 2)
 
-       ret, frame = vid.read()
-       frame = cv2.resize(frame, (xlen, ylen), fx = 0, fy = 0,
-                         interpolation = cv2.INTER_CUBIC)
-       
-       gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # Display the original and thresholded frames
+    cv2.imshow('Original', frame)
+    cv2.imshow('Adaptive Threshold', thresh)
 
-       th = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
-                                           cv2.THRESH_BINARY_INV, 11, 2)
+    # Break the loop if 'q' is pressed
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
-cv2.imshow("",th)
-
-cv2.waitKey(0)
-cam.vid.release()
+# Release the camera and close all OpenCV windows
+cap.release()
 cv2.destroyAllWindows()
