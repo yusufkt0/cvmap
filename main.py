@@ -1,6 +1,5 @@
 from math import e
 import cv2
-import cameradef as cam
 import mapdef as map
 
 vid = cv2.VideoCapture()
