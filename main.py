@@ -8,7 +8,7 @@ frame = cv2.imread
 
 xlen = vid.get(cv2.CAP_PROP_FRAME_WIDTH)
 ylen = vid.get(cv2.CAP_PROP_FRAME_HEIGHT)
-
+th = cv2.imread()
 #resize int istiyor
 xlen = int (xlen)
 ylen = int (ylen)
